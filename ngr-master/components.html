@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Components</title>
+</head>
+<body>
+    <nav>
+        <a href="index.html" id="logo" class="navbutton" aria-label="Logo Ngineers">
+            <img src="img_vid/logo_proba.svg" alt="Logo Ngineers">
+        </a>
+        <div>
+            <a class="navbutton" href="index.html" id="nav-glowna" aria-label="Przycisk Strona główna">Strona Główna</a>
+            <a class="navbutton" href="aboutus.html" aria-label="Przycisk O Nas">O Nas</a>
+            <div class="dropdown">
+                <a class="navbutton" href="ultras.html" aria-label="Przycisk Ultrasi">Ultrasi</a>
+                <div class="dropdown-content">
+                    <a href="spiewnik.html" aria-label="Przycisk śpiewnik">Śpiewnik</a>
+                </div>
+            </div>
+            <a class="navbutton" href="games.php" aria-label="Przycisk Mecze">Mecze</a>
+            <a class="navbutton" href="merch.html" aria-label="Przycisk Merch">Merch</a>
+        </div>
+        <div id="socials">
+            <a href="https://www.instagram.com/ngineers60" target="_blank" aria-label="Przycisk Instagram Ngineers">
+                <img loading="lazy" src="/img_vid/ig.svg" alt="Logo Instagram" id="ig">
+            </a>
+        </div>
+        <div id="menu">
+            <div class="phone">
+                <div id="photo" onclick="displaymenu()">
+                    <img loading="lazy" src="img_vid/lines.svg" alt="">
+                </div>
+                <div class="phonemenu">
+                    <a class="navbutton phone-content" href="index.html" aria-label="Przycisk Strona główna">Strona Główna</a>
+                    <a class="navbutton phone-content" href="aboutus.html" aria-label="Przycisk O Nas">O Nas</a>
+                    <a class="navbutton phone-content" href="ultras.html" aria-label="Przycisk Ultrasi">Ultrasi</a>
+                    <a class="navbutton phone-content" href="spiewnik.html" aria-label="Przycisk Śpiewnik">Śpiewnik</a>
+                    <a class="navbutton phone-content" href="games.php" aria-label="Przycisk Mecze">Mecze</a>
+                    <a class="navbutton phone-content" href="merch.html" aria-label="Przycisk Merch">Merch</a>
+                    <a class="navbutton phone-content" href="https://www.instagram.com/ngineers60" aria-label="Przycisk Instagram Ngineers">Instagram</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <footer>
+        <div class="footer-section" id="footer-maupka">
+            <img loading="lazy" src="/img_vid/ngineers logo 2.svg" alt="Ngineers Logo" class="footer-logo">
+        </div>
+        
+        <div class="footer-section">
+            <h1>O Nas</h1>
+            <p>Jesteśmy Ngineers - team e-sportowy i ekipa mega wychillowanych ziomków 😎</p>
+        </div>
+        
+        <div class="footer-section">
+            <h1>Kontakt</h1>
+            <div class="footer-contact">
+                <a href="mailto:contact@ngineers.com" aria-label="Mail drużyny Ngineers"><img loading="lazy" src="img_vid/email.webp" alt="ikonka email"> kontakt@ngineers.pl</a>
+                <a href="https://www.instagram.com/ngineers60" aria-label="Instagram drużyny Ngineers"><img loading="lazy" src="img_vid/ig.webp" alt="ikonka instagram"> @ngineers60</a>
+                <p><img loading="lazy" src="img_vid/discord.webp" alt="ikonka discord"> karolson_</p>
+            </div>
+        </div>
+
+        <div class="footer-section">
+            <h1>Sponsorzy</h1>
+            <div id="sponsors-layout"> 
+                <div class="footer-sponsors">
+                    <a href="https://sunapartamenty.pl/" target="_blank" aria-label="Sponsor Sun Apartamenty"><img loading="lazy" width="136" height="80" src="img_vid/sunaparty.webp" class="sponsors" alt="Logo Sun Apartamenty"></a>
+                </div>
+                <div class="footer-sponsors">
+                    <a href="https://g.co/kgs/nRfLwbU" target="_blank" aria-label="Sponsor Słońce"><img loading="lazy" width="102" height="80" src="img_vid/slonce.webp" class="sponsors" alt="Logo Słońce"></a>
+                </div>
+                <div class="footer-sponsors">
+                    <a href="http://www.zomarkbud.pl/" target="_blank" aria-label="Sponsor MarkBud"><img loading="lazy" width="260" height="80" src="img_vid/markbud.webp" class="sponsors" alt="Logo MarkBud"></a>
+                </div>
+            </div>
+        </div>
+    </footer>    
+
+    <book>
+        <a class="book" data-param="href">
+            <div class="title">
+              <p data-param="title"></p>
+            </div>
+            <div class="book-cover" data-style="background-image">
+              <div class="effect"></div>
+              <div class="light"></div>
+            </div>
+            <div class="book-inside">
+            </div>
+          </a>
+    </book>
+
+    <card>
+        <div class="card">
+            <div class="card-photo" data-style="background-image"></div>
+            
+            <a data-param="href" target="_blank" class="card-info" aria-label="Otwórz profil zawodnika na op.gg">
+                <div class="role"> <img loading="lazy" data-param="src" alt="linia"></div>
+                <h1 class="title" data-param="title"></h1>
+                <span class="subtitle" data-param="subtitle"></span>
+            </a>
+        </div>
+    </card>
+    
+    <mgmtcard>
+        <div class="card">
+            <div class="card-inner">
+                <div class="card-front">
+                    <div class="card-photo">
+                        <img loading="lazy" data-param="src" data-param="alt">
+                    </div>
+                    <div class="card-info">
+                        <h4 class="title"><span data-param="imie"></span> <span data-param="nazwisko"></span></h4>
+                        <span class="subtitle" data-param="rola"></span>
+                    </div>
+                </div>
+                <div class="card-back">
+                    <div class="info-container">
+                        <div class="profilephoto">
+                            <img loading="lazy" data-param="src" data-param="alt">
+                        </div>
+                        <h1><span data-param="imie"></span> <span data-param="nazwisko"></span></h1>
+                        <p data-param="rola" class="zarzadrola"></p>
+                        <hr>
+                        <p data-param="description" class="zarzadopis"></p>
+                        <br>
+                        <a data-param="href" target="_blank">
+                            <img data-param="src1" alt="Logo do platfromy profilu" width="64" height="64">
+                            <span data-param="platform"></span>
+                        </a>
+                        <br>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </mgmtcard>
+
+    <storyyear>
+        <div class="year-phone" >
+            <section onclick="rozwin(this)">
+                <img loading="lazy" src="img_vid/plus.svg" alt="plus" style="opacity: 0; user-select: none;">
+                <h1 style="user-select: none;" data-param="rok"></h1>
+                <img loading="lazy" src="img_vid/plus.svg"  alt="plus" class="plusik" style="user-select: none;">
+            </section>
+            <div>
+                <h2 data-param="title"></h2>
+                <p data-param="description"></p>
+            </div>
+        </div>
+    </storyyear>
+</body>
+</html>

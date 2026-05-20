@@ -1,0 +1,362 @@
+@import url("style.css");
+
+
+#gallery{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
+}
+
+main{
+  display: flex;
+  width: 70%;
+  border-radius: 2rem;
+  background: radial-gradient(closest-side at 20% 20%, rgba(58, 58, 24, 0.7) 60%, rgba(0,0,0,0.9) 900%);
+  overflow-x: scroll;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+}
+
+main::-webkit-scrollbar{
+  display: none;
+}
+
+main > img{
+  z-index: -1;
+  height: 45rem;
+  object-fit: cover;
+  min-width: 100%;
+  scroll-snap-align: center; /* to psuje drag scrolla */
+  user-select: none;
+}
+
+#kropeczki {
+  display: flex;
+  gap: 0.5rem;
+}
+
+@media only screen and (max-height: 900px) {
+  #gallery > .story {
+    width: 100%;
+  }
+  .story > #content > h1 + div {
+    width: 80%;
+  }
+}
+
+#kropeczki > div {
+  display: block;
+  width: 1rem;
+  height: 1rem;
+  border-radius: 2.5rem;
+  border: 0.15rem solid var(--zolty);
+  transition: 0.3s;
+}
+
+#kropeczki > .kropeczka-active {
+  width: 2.5rem;
+  transition: 0.4s;
+  background-color: var(--zolty);
+}
+
+#kropeczki > div:hover {
+  background-color: var(--zolty);
+  cursor: pointer;
+}
+
+#gallery > div {
+  position: absolute;
+  width: 100%;
+  height: 45rem;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  z-index: 4;
+  right: 16%;
+  padding: 0.75rem;
+}
+
+.story > div > h1{
+  text-align: center;
+  font-size: 4rem;
+}
+
+.story > div > div{
+  font-size: 1.5rem;
+}
+
+#content{
+    display: flex;
+    align-items: start;
+    flex-direction: column;
+    width: 100%;
+}
+.story{
+    border-radius: 2rem;
+    padding: 2rem;
+    width: 30%;
+    z-index: 99;
+    position: absolute;
+    left: 17%;
+}
+
+section > div {
+    display: flex;
+    justify-content: center;
+}
+
+#ultras-button{
+    background-color: var(--zolty);
+    height: 6rem;
+    width: 26rem;
+    padding: 1rem;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;   
+    margin-top: 5rem; 
+    border-radius: 1rem;
+    box-shadow: 0 0 3rem 0.2rem var(--zolty);
+    transition: 0.6s ease;
+}
+
+#ultras-button:hover{
+    transform: scale(1.1);
+    transition: 0.6s ease;
+    box-shadow: 0 0 5rem 0.4rem var(--zolty);
+    color: var(--zoltyciemniejszy);
+}
+
+h2{
+    text-align: center;
+    font-size: 3rem;
+    margin-bottom: 5rem;
+    
+}
+
+/* #region ksiazki */
+.container {
+    width:100%;
+    height: 30rem;
+    gap: 5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  
+  .book {
+    display: block;
+    width: 225px; /* poszerzanie ksiazek */
+    height: 350px;
+    position: relative;
+    text-align: center;
+    margin: 3rem;
+    margin-top: 1rem;
+  }
+  
+  .book-cover {
+    position: absolute;
+    z-index:1;
+    width: 100%;
+    height: 100%;
+    transform-origin: 0 50%;
+    -webkit-transform-origin: 0 50%;
+    background: #111;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 3px;
+    box-shadow: 
+      inset 4px 1px 3px rgba(46, 46, 46, 0.527),
+      inset 0 -1px 2px #00000080;
+    transition: all .5s ease-in-out;
+    -webkit-transition: all .5s ease-in-out;
+  }
+
+  .cover1 {
+    background-image: url('/img_vid/ksiazka.webp');
+  }
+  
+  .cover2 {
+    background-image: url('/img_vid/ksiazka.webp');
+  }
+  
+  .cover3 {
+    background-image: url('/img_vid/ksiazka.webp');
+  }
+  
+  .cover4 {
+    background-image: url('/img_vid/ksiazka.webp');
+  }
+  
+  .effect {
+    width: 20px;
+    height: 100%;
+    margin-left: 10px;
+    border-left: 2px solid #00000010;
+    background-image: linear-gradient(90deg, rgba(27, 27, 27, 0.527) 0%, rgba(41, 40, 40, 0) 100%);
+    transition: all .5s ease;
+  }
+  
+  .light {
+    width: 90%;
+    height: 100%;
+    position: absolute;
+    border-radius: 3px; 
+    background-image: linear-gradient(90deg, rgba(82, 82, 82, 0) 0%, rgba(26, 26, 26, 0.527) 100%);
+    top: 0;
+    right:0;
+    opacity: .1;
+    transition: all .5s ease;
+    -webkit-transition: all .5s ease;
+  }
+  
+  .book:hover {
+    cursor:pointer;
+  }
+  
+  .book:hover .book-cover {
+    transform: perspective(2000px) rotateY(-30deg);
+    -webkit-transform: perspective(2000px) rotateY(-30deg);
+    transform-style: preserve-3d;
+    -webkit-transform-style: preserve-3d;
+    box-shadow: 
+      inset 4px 1px 3px rgba(46, 46, 46, 0.527),
+      inset 0 -1px 2px #00000080,
+      10px 0px 10px -5px #00000030
+  }
+  
+  .book:hover .effect {
+    width: 40px;
+  }
+  
+  .book:hover .light {
+    opacity: 1;
+    width: 70%;
+  }
+  
+  .book-inside{
+    width: calc(100% - 2px);
+    height:96%;
+    position:relative;
+    top: 2%;
+    border: 1px solid grey;
+    border-radius:3px;
+    background: white;
+    box-shadow: 
+    10px 40px 40px -10px #00000030,
+    inset -2px 0 0 grey,
+    inset -3px 0 0 #dbdbdb,
+    inset -4px 0 0 white,
+    inset -5px 0 0 #dbdbdb,
+    inset -6px 0 0 white,
+    inset -7px 0 0 #dbdbdb,
+    inset -8px 0 0 white,
+    inset -9px 0 0 #dbdbdb;
+  }
+  
+  .title {
+    font-size:2.25rem;
+    font-weight: lighter;
+    width: 100%;
+    color: white;
+    text-align: center;
+    position: absolute;
+    top:-30px;
+    height: 1px;
+    display: flex;
+    align-items: flex-end;
+    opacity: 1;
+  }
+  
+  .title p {
+    width: 100%;
+    margin: 0;
+    line-height: 1.3;
+  }
+  
+  .book:hover .title {
+    color: var(--zolty);
+  }
+
+
+  /* #endregion ksiazki */
+
+  @media only screen and (max-width: 1523px){
+    .container{
+      height: 60rem;
+    }
+
+  }
+
+  @media only screen and (max-height: 800px){
+    .container{
+      height: 60rem;
+    }
+
+  }
+ 
+
+  @media only screen and (max-width: 700px) {
+    #kropeczki {
+      display: none;
+    }
+  
+    main {
+      width: 100%;
+      border-radius: 0;
+    }
+  
+    #gallery {
+      margin-top: 0;
+    }
+    
+    main > img {
+      opacity: 0.4;
+      
+    }
+    
+    .story {
+      left: 0;
+      width: 100%;
+      line-height: 175%;
+    }
+  
+    .story > div > h1 {
+      font-size: 2.7rem;
+      width: 100%;
+      text-align: center;
+
+    }
+    .story > div > div {
+      font-size: 1rem;
+      text-wrap: wrap;
+      text-align: justify;
+    }
+
+    #ultras-button {
+      width: 15rem;
+      font-size: 1.15rem;
+      height: 4.5rem;
+      margin-top: 7rem;
+    }
+
+    #content {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .container{
+      height: 120rem;
+    }
+
+  }
+
+  
+
+
+  
