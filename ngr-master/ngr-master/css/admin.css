@@ -1,0 +1,92 @@
+
+
+.admin-panel {
+    background: var(--cardblack);
+    padding: 2.5rem;
+    border-radius: 1.5rem;
+    border: 2px solid var(--zolty);
+    margin: 3rem auto;
+    max-width: 900px;
+}
+
+.admin-panel h3 {
+    margin-top: 0;
+    color: var(--zolty);
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.admin-form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    align-items: flex-end;
+}
+
+.admin-form input {
+    background: var(--black);
+    border: 1px solid var(--szary);
+    color: var(--bialy);
+    padding: 0.75rem;
+    border-radius: 0.5rem;
+    font-family: inherit;
+}
+
+.admin-form input:focus {
+    border-color: var(--zolty);
+    outline: none;
+}
+
+.mecz-container {
+    margin-bottom: 2.5rem;
+    background-color: var(--cardblack);
+    border-radius: 2rem;
+    overflow: hidden;
+    border-left: 6px solid transparent; /* Miejsce na status meczu[cite: 33] */
+    transition: transform 0.3s ease;
+}
+
+.mecz-container:hover {
+    transform: translateY(-5px);
+}
+
+.mecz {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2.5rem;
+    height: auto !important; /* Nadpisanie sztywnej wysokości z games.css[cite: 21] */
+    min-height: 15rem;
+    position: relative;
+}
+
+.mecz-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    width: 100%;
+    text-align: center;
+}
+
+.del-link {
+    position: absolute;
+    top: 1.5rem;
+    right: 2rem;
+    color: var(--szary);
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.2rem;
+    transition: 0.3s;
+}
+
+.del-link:hover {
+    color: #e74c3c;
+    transform: scale(1.2);
+}
+
+.win-border { border-left-color: var(--zolty) !important; }
+.loss-border { border-left-color: #e74c3c !important; }
+.win-text { color: #2ecc71 !important; font-weight: bold; }
+.loss-text { color: #e74c3c !important; font-weight: bold; }

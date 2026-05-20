@@ -1,0 +1,452 @@
+@import url("style.css");
+
+
+/* #region napis górny */
+.story > h1{
+    text-align: center;
+    font-size: 3rem;
+}
+
+.story {
+    padding: 2rem;
+}
+
+#years {
+    display: flex;
+    justify-content: space-around;
+    padding: 2rem;
+    align-items: center;
+    width: 100%;
+}
+
+#years-phone {
+    display: none;
+    gap: 3rem;
+}
+
+#years-phone > div {
+    width: 100%;
+}
+
+.year-phone {
+    text-align: center;
+    font-weight: bold;
+}
+
+.year-phone h1 {
+    margin: 0;
+}
+
+.year-phone > section {
+    display: flex;  
+    justify-content: space-around;
+    padding: 0.5rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    background-color: var(--cardblack);
+    border-radius: 2rem;
+    z-index: 2;
+    font-size: 3rem;
+}
+
+.year-phone > section > img{
+    width: 2rem;
+}
+
+.year-phone:hover {
+    cursor: pointer;
+}
+
+.year-phone > div {
+    display: none;
+    flex-direction: column;
+    font-size: 1rem;
+    cursor: default;
+    z-index: -1;
+    animation: slideInFromTop2 0.3s ease;
+}
+
+.year-phone > div > p {
+    font-weight: normal;
+    cursor: text;
+}
+
+.year-phone > div > h2 {
+    cursor: text;
+}
+
+.year {
+    user-select: none;
+    cursor: pointer;
+}
+
+.year > h1 {
+    font-size: 3rem;
+}
+
+.year-active > h1 {
+    border-bottom: var(--zolty) solid 0.25rem;
+    border-top: transparent solid 0.25rem;
+}
+
+.lacznik {
+    height: 0.5rem;
+    border-radius: 0.5rem;
+    width: 15%;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    background-color: var(--cardblack);
+}
+
+.year-active + .lacznik > div {
+    height: 100%;
+    border-radius: 0.5rem;
+    width: 0;
+    background-color: var(--zolty);
+}
+
+.year-active + .lacznik > div {
+    animation: lacznik-autoscroll 40s linear forwards infinite;
+}
+
+@keyframes lacznik-autoscroll {
+    from {
+        width: 0;
+    } to {
+        width: 100%;
+    }
+}
+
+#year-content {
+    display: flex;
+    width: 100%;
+    height: 20rem;
+    padding-left: 4rem;
+    padding-right: 4rem;
+}
+
+#year-content-text, #year-content-img {
+    flex: 1;
+}
+
+#year-content-text > h1 {
+    margin-top: 0;
+    text-align: center;
+    font-size: 1.875rem;
+    margin-bottom: 2rem;
+}
+
+#year-content-text > p {
+    display: flex;
+    font-size: 1.125rem;
+    text-align: justify;
+    text-justify: distribute;
+    line-height: 200%;
+}
+
+#year-content-img {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+/* #endregion napis górny */
+
+/* #region zarzad */
+
+.management > div{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.management > h1{
+    text-align: center;
+    font-size: 3rem;
+}
+
+/* #endregion zarzad */
+
+/* #region karta generalna */
+
+.management .card{
+    height: 39rem;
+    width: 25rem;
+    perspective: 1000px;
+    background: none;
+    
+}
+
+.card-info{
+    transition: unset;
+}
+
+.card-info .subtitle{
+    font-size: 1.5rem;
+    transition: none;
+    
+}
+
+.card-info .title{
+    font-size: 2rem;
+    transition: none;
+}
+
+.card *{
+    transition: none;
+    cursor: pointer;
+    
+}
+
+.card-photo {
+    height: unset;
+}
+
+.card-photo > img {
+    object-fit: cover;
+    aspect-ratio: 1/1;
+    width: 100%;
+    height: 100%;
+}
+
+.card {
+    transition: unset;
+}
+
+.card:hover{
+    color: var(--zolty);
+    transform: none;
+    box-shadow: none;
+    transition: unset;
+}
+
+.card:hover .card-inner {
+    box-shadow: 0 0 3rem -0.5rem var(--zoltyciemniejszy);
+    transition: 0.3s ease;
+}
+
+.card-info:hover .title{
+    transform: none;
+}
+
+.card-info:hover .subtitle{
+    transform: none;
+    font-weight: unset;
+}
+
+.card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+    border-radius: 1rem;
+    transition: 0.3s ease;
+}
+
+.card.flipped .card-inner {
+    transform: rotateY(180deg);
+}
+
+.card-front, .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    background-color: var(--cardblack);
+    border-radius: 1rem;
+    padding: 0.5rem;
+}
+
+/* #endregion karta generalna */
+
+/* #region karta tyl */
+
+
+.card-back {
+    transform: rotateY(180deg);
+    background: linear-gradient(145deg, var(--cardblack), #1a1a1a);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2.5rem;
+}
+
+.card-back .profilephoto {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-back .profilephoto > img {
+    height: 7.5rem;
+    width: 7.5rem;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.info-container {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 1rem;
+    padding: 1.5rem;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.2);
+}
+
+.info-container > hr {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.info-container > .zarzadrola {
+    color: var(--szary);
+}
+
+.info-container > .zarzadopis {
+    color: var(--bialy);
+}
+
+.info-container > a {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+    transition: 0.32s;
+    padding: 1rem;
+}
+
+.info-container > a > img {
+    aspect-ratio: 1/1;
+}
+
+.info-container > a:hover {
+    background-color: var(--cardblack);
+    border-radius: 1rem;
+    
+    color: var(--zolty);
+    transition: 0.32s;
+}
+
+.info-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 0.8rem;
+}
+
+.info-table tr {
+    transition: all 0.3s ease;
+}
+
+.info-table tr:hover {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.info-table td {
+    padding: 1rem 1.5rem;
+    font-size: 1.2rem;
+}
+
+.info-table .label {
+    font-weight: 600;
+    color: var(--zolty);
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+}
+
+.info-table .value {
+    color: white;
+}
+
+.info-table tr:not(:last-child) td {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.info-table tr:last-child {
+    border-bottom: none;
+}
+
+.info-table td:first-child {
+    font-weight: bold;
+    color: var(--zolty);
+    border-right: 1px solid var(--zolty);
+}
+
+.text_over_table{
+    color: white;
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-bottom: 2rem;
+    padding: 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    text-align: left;
+}
+
+.label-phone > td{
+    font-weight: 600;
+    color: var(--zolty);
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    letter-spacing: 1px;
+    border-right: unset !important;
+    border-bottom: var(--zolty) 1px solid !important;
+    width: 2rem;
+    padding: 0;
+    display: none;
+}
+
+
+/* #endregion karta tyl */
+
+
+@media only screen and (max-width: 900px){
+    #years, #year-content{
+        display: none;
+    }
+
+    #years-phone{
+        display: flex;
+    }
+
+    .story{
+        text-align: justify;
+    }
+
+    .year-phone p{
+        text-align: justify;
+        line-height: 170%;
+    }
+
+    .card{
+        margin: 0;
+    
+    }
+}
+
+
+@media only screen and (max-width: 400px){
+    .management .card{
+        width: 100vw;
+    }
+
+    .info-table .label{
+        display: none;
+        
+    }
+
+    .label-phone > td {
+        display: table-cell;
+    }
+
+    .info-table .value {
+        padding-top: 0;
+    }
+
+    .info-table tr:not(:last-child) td {
+        border-bottom: unset;
+    }
+}
