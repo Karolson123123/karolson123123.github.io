@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ngineers | Plutomierz</title>
+    <link rel="shortcut icon" href="img_vid/maupka.webp" type="image/x-icon">
+    <script src="js/import-components.js" defer></script>
+    <script src="js/tajnyplutomierz.js" defer></script>
+    <link rel="stylesheet" href="css/plutomierz.css">
+</head>
+<body>
+    <nav></nav>
+
+    <main>
+        <section>
+            <section id="gora">
+                <div id="motivationalPluta"></div>
+            </section>
+            
+            <section id="srodek">
+                <div class="box"></div>
+            </section>
+            
+            <section id="dol">
+                <div id="pluta"> </div>
+            </section>
+        </section>
+        
+        <aside>
+            <div id="chatHead">
+                <h2>PLUTA LIVECHAT</h2>
+                <div>
+                    <section>
+                        Aktywni użytkownicy:
+                        <div id="activeUsers"></div>
+                    </section>
+                    
+                    <section>
+                        Autor plutomierza:
+                        <a href="https://www.instagram.com/robertkibica" aria-label="Instagram twórcy plutomierza" target="_blank">Robert Kibica</a>
+                    </section>
+                </div>
+            </div>
+            <div id="chat"></div>
+            <div id="messageContainer">
+                <div>
+                    <input type="text" placeholder="Nick..." id="username" minlength="2" maxlength="16">
+                    <input type="text" placeholder="Wiadomość..." id="textmessage" minlength="0" maxlength="200">
+                </div>
+                <button id="sendMessageButton" onclick="sendMessage()">
+                    <img loading="lazy" src="img_vid/enter.webp" alt="ikonka wysłania widomości">
+                </button>
+            </div>
+        </aside>
+    </main>
+
+    <p style="text-align: center; color: grey; margin-top: 3rem;">Drużyna NGR nie odpowiada za zawartość tej strony. Jest to jedynie podgląd strony plutomierz.ovh autorstwa Roberta Kibicy. </p>
+
+    <footer></footer>
+</body>
+</html>
